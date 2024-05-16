@@ -3,6 +3,6 @@ COPY . .
 RUN mvn  clean package -DskipTests
 
 FROM openjdk:8-jre-slim
-COPY --from=build /target/nanda-betest-0.0.1-SNAPSHOT.jar nanda-betest.jar
+COPY --from=build /target/*.jar nanda-betest.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","nanda-betest.jar"]
