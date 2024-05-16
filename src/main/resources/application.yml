@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: nanda-betest
+  
+  data:
+    mongodb:
+      uri: mongodb+srv://nanda_betest:Uwm3BkFRhqpQTLfe@mongo-nanda.ft9zi9y.mongodb.net/db_nanda_betest
+
+    
+  redis:
+    host: redis-18822.c302.asia-northeast1-1.gce.redns.redis-cloud.com
+    port: 18822
+    password: JnWKbZpEs1QmLAmOfKNJLjT2VklbSdR0
+    timeout: 60000
+    
+#server:
+#  port: 8079
