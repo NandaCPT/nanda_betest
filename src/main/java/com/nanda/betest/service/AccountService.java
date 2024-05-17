@@ -68,9 +68,9 @@ public class AccountService {
     	return userInfo;
     }
     
-    public List<UserInfoEntity> getAccountByLastLogin() throws Exception {
+    public List<AccountLoginEntity> getAccountByLastLogin() throws Exception {
     	
-    	List<UserInfoEntity> userInfo = new ArrayList<UserInfoEntity>();
+    	List<AccountLoginEntity> userInfo = new ArrayList<AccountLoginEntity>();
     	try {
     		
     		LocalDateTime lastWeek = LocalDateTime.now().minusDays(3);
@@ -80,7 +80,7 @@ public class AccountService {
     		Query newQuery = new Query();
     		newQuery.addCriteria(Criteria.where("lastLoginDateTime").lte(formattedDate));
     		
-    		userInfo = mongoTemplate.find(newQuery, UserInfoEntity.class, "UserInfo");
+    		userInfo = mongoTemplate.find(newQuery, AccountLoginEntity.class, "AccountLogin");
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new Exception(e.getMessage());

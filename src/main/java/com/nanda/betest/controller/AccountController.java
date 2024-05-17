@@ -132,7 +132,7 @@ public class AccountController {
 	@GetMapping("/lastLogin")
     public ResponseEntity<Map<String, Object>>  getAccountUserDetailsByLastLogin(HttpServletRequest req) throws Exception {
 		Map<String, Object> map = new HashMap<>();
-		List<UserInfoEntity> result = new ArrayList<UserInfoEntity>();
+		List<AccountLoginEntity> result = new ArrayList<AccountLoginEntity>();
 		String token = req.getHeader("Authorization");
 		Boolean validation = checkToken(token);
 		if(validation) {
